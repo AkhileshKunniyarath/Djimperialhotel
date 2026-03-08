@@ -1,0 +1,81 @@
+.suites {
+    background-color: var(--background);
+}
+
+.suites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.suite-card {
+    background: var(--surface);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.suite-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.suite-image {
+    height: 250px;
+    background-color: #ddd;
+    background-position: center;
+    background-size: cover;
+}
+
+.suite-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.suite-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.suite-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.suite-features {
+    list-style: none;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+}
+
+.suite-features li {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+}
+
+.suite-footer {
+    margin-top: auto;
+    text-align: center;
+}
+
+.suite-footer .btn {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .suite-features {
+        grid-template-columns: 1fr;
+    }
+}

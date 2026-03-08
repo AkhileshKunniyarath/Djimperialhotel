@@ -1,0 +1,116 @@
+.contact {
+    background-color: var(--surface);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.contact-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.contact-item strong {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary);
+}
+
+.contact-item a,
+.contact-item span {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.contact-item a:hover {
+    color: var(--primary);
+}
+
+.contact-form {
+    background: var(--background);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--border);
+}
+
+.contact-form h3 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background: var(--surface);
+    transition: border-color 0.3s ease;
+    outline: none;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+}
+
+.form-submit {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact .section-title {
+        text-align: center !important;
+    }
+}

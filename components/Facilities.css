@@ -1,0 +1,115 @@
+.facilities {
+    background-color: var(--background);
+    position: relative;
+    overflow: hidden;
+}
+
+.facilities::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.04) 0%, transparent 60%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.facilities-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.facilities-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.facility-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.facility-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--primary);
+    transition: height 0.4s ease;
+}
+
+.facility-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    border-color: transparent;
+}
+
+.facility-item:hover::after {
+    height: 100%;
+}
+
+.facility-icon-wrap {
+    background: rgba(212, 175, 55, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.facility-item:hover .facility-icon-wrap {
+    background: var(--primary);
+    transform: rotate(10deg);
+}
+
+.facility-icon {
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.facility-item:hover .facility-icon {
+    filter: brightness(0) invert(1);
+}
+
+.facility-content {
+    flex-grow: 1;
+}
+
+.facility-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+    font-family: 'Poppins', sans-serif;
+}
+
+.facility-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .facilities-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
