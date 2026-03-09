@@ -1,15 +1,37 @@
+/* Full Width Hero Layout */
 .hero {
     position: relative;
-    height: 100vh;
-    min-height: 600px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: #fff;
-    /* Placeholder image, to be replaced by actual exterior.jpg */
-    background: url('/images/hero-bg.jpg') center/cover no-repeat;
-    padding: 0;
+    padding: 8rem 2rem 4rem;
+    overflow: hidden;
+}
+
+.hero-bg-anim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/hero-new-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    /* subtle scale animation */
+    animation: bgZoom 20s infinite alternate;
+}
+
+@keyframes bgZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 .hero-overlay {
@@ -19,58 +41,97 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.6) 0%,
-            rgba(0, 0, 0, 0.3) 50%,
-            rgba(0, 0, 0, 0.7) 100%);
-    z-index: 1;
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(26, 26, 26, 0.8) 100%);
+    z-index: -1;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
     max-width: 800px;
-    padding: 0 1rem;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
 }
 
-.hero-title {
-    font-size: 4rem;
-    color: #fff;
-    margin-bottom: 2rem;
+/* Shimmering Text Effect */
+.shimmer-text {
+    font-size: 4.5rem;
+    margin-bottom: 0.5rem;
     line-height: 1.1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(90deg, #fff 0%, var(--primary) 30%, #fff 50%, var(--primary) 70%, #fff 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmer 8s linear infinite;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: 200% center;
+    }
 }
 
 .hero-subtitle {
     display: block;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 300;
     color: var(--primary);
     margin-top: 1rem;
-    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .hero-text {
-    font-size: 1.25rem;
-    margin-bottom: 2.5rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 3.5rem;
+    font-weight: 400;
+    color: #f0f0f0;
+    /* brighter for overlay */
+    line-height: 1.6;
 }
 
+/* Styled Feature Pills */
 .hero-highlights {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    gap: 1rem;
+    margin-bottom: 4rem;
 }
 
 .highlight {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #fff;
+}
+
+.highlight:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.8);
+    transform: translateY(-3px);
+}
+
+.highlight::before {
+    content: '✦';
+    color: var(--primary);
+    font-size: 1.1rem;
 }
 
 .hero-buttons {
@@ -81,21 +142,62 @@
 }
 
 .hero-btn-outline {
-    border-color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
     color: #fff;
 }
 
 .hero-btn-outline:hover {
-    background: #fff;
-    color: var(--secondary);
+    border-color: var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+@media (max-width: 1024px) {
+    .shimmer-text {
+        font-size: 4rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.8rem;
+    .shimmer-text {
+        font-size: 2.4rem;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 6rem 1.5rem 3rem;
+    }
+
+    .shimmer-text {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .highlight {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
     }
 }

@@ -17,10 +17,10 @@ export default function Home() {
             <Header />
             <main>
                 <Hero />
-                <FadeIn><About /></FadeIn>
-                <FadeIn><Suites /></FadeIn>
-                <FadeIn><Restaurant /></FadeIn>
-                <FadeIn><Facilities /></FadeIn>
+                <About />
+                <Suites />
+                <Restaurant />
+                <Facilities />
                 <FadeIn><Gallery /></FadeIn>
                 <FadeIn><Location /></FadeIn>
                 <FadeIn><BookingCTA /></FadeIn>

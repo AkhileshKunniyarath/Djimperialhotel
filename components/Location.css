@@ -86,4 +86,18 @@
     .location-grid {
         grid-template-columns: 1fr;
     }
+
+    .address-icon {
+        font-size: 1.5rem;
+    }
+
+    .address-block p,
+    .address-block a,
+    .nearby-highlights li {
+        font-size: 0.9rem;
+    }
+
+    .map-wrapper {
+        height: 300px;
+    }
 }

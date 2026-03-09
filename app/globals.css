@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -162,4 +163,14 @@ section {
 .fade-in-section.is-visible {
   opacity: 1;
   transform: translate(0) scale(1);
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
 }

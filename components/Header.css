@@ -20,27 +20,41 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 4rem;
+    /* Increased padding */
+    max-width: 1400px;
+    /* Expand wider than the 1200px default container */
+    margin: 0 auto;
+    width: 100%;
 }
 
 .logo {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-text {
+    display: flex;
     flex-direction: column;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 .logo-main {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    /* Slightly smaller to accommodate the image */
     font-weight: 700;
     letter-spacing: 2px;
+    margin-bottom: 2px;
 }
 
 .logo-sub {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 3px;
     color: var(--primary);
-    text-align: center;
+    text-align: left;
 }
 
 .header:not(.glass) .nav-link,
@@ -89,39 +103,116 @@
 
 .menu-toggle {
     display: none;
-    background: none;
+    background: transparent !important;
+    background-color: transparent !important;
     border: none;
     font-size: 1.8rem;
     cursor: pointer;
     color: inherit;
-    padding: 0;
+    padding: 0 !important;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus,
+.menu-toggle:active {
+    background: transparent !important;
+    background-color: transparent !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.mobile-only-book {
+    display: none;
+}
+
+.desktop-only-book {
+    display: block;
+}
+
+.menu-close {
+    display: none;
+}
+
+.nav-overlay {
+    display: none;
 }
 
 @media (max-width: 992px) {
-    .nav {
-        position: absolute;
-        top: 100%;
+    .nav-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
         left: 0;
-        width: 100%;
-        background: #fff;
-        padding: 2rem;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        transform: translateY(-20px);
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
     }
 
-    .nav.open {
-        transform: translateY(0);
+    .nav-overlay.open {
         opacity: 1;
         visibility: visible;
     }
 
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        max-width: 85vw;
+        height: 100vh;
+        background: #fff;
+        padding: 5rem 2rem 2rem;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
+        z-index: 1001;
+        transition: right 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        overflow-y: auto;
+        /* Reset drop-down properties */
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav.open {
+        right: 0;
+        transform: none;
+    }
+
+    .menu-close {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        font-size: 1.4rem;
+        color: var(--text-main);
+        cursor: pointer;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
     .nav-list {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        color: var(--secondary);
+    }
+
+    /* Hide the primary underline hover effect on mobile */
+    .nav-link::after {
+        display: none;
     }
 
     .header:not(.glass) .nav-link {
@@ -131,5 +222,69 @@
 
     .menu-toggle {
         display: block;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .header-container,
+    .header.glass .header-container {
+        padding: 0 1rem;
+    }
+
+    .header {
+        padding: 1rem 0;
+    }
+
+    .header.glass {
+        padding: 0.8rem 0;
+    }
+
+    .logo {
+        gap: 6px;
+    }
+
+    .logo-main {
+        font-size: 0.95rem;
+        /* Reduced font size further */
+        letter-spacing: 1px;
+    }
+
+    .logo-sub {
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+    }
+
+    .logo-img {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    /* Hide the Book Now button in the header on mobile to prevent crowding */
+    .desktop-only-book {
+        display: none !important;
+    }
+
+    /* Show a mobile-specific book button inside the navigation menu instead */
+    .mobile-only-book {
+        display: block;
+        margin-top: 1rem;
+    }
+
+    .btn-book-mobile {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+        background-color: var(--primary);
+        color: #fff;
+        border-radius: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .menu-toggle {
+        font-size: 1.5rem;
     }
 }

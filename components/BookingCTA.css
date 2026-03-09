@@ -82,18 +82,17 @@
     transform: translateY(-2px);
 }
 
-.cta-outline {
-    border-color: #fff;
-    color: #fff;
-}
-
-.cta-outline:hover {
-    background: #fff;
-    color: var(--secondary);
-}
-
 @media (max-width: 600px) {
     .booking-title {
-        font-size: 2.2rem;
+        font-size: 1.5rem;
+    }
+
+    .booking-text {
+        font-size: 0.95rem;
+    }
+
+    .phone-chip {
+        font-size: 0.9rem;
+        padding: 0.4rem 1.2rem;
     }
 }

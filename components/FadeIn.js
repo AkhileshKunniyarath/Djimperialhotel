@@ -10,10 +10,11 @@ export default function FadeIn({ children, delay = 0, direction = 'up', classNam
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
-                    observer.unobserve(entry.target);
+                } else {
+                    setIsVisible(false);
                 }
             });
-        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+        }, { threshold: 0, rootMargin: '0px 0px -20% 0px' });
 
         const currentRef = domRef.current;
         if (currentRef) observer.observe(currentRef);

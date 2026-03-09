@@ -1,3 +1,4 @@
+import FadeIn from './FadeIn';
 import './Facilities.css';
 
 const facilities = [
@@ -15,24 +16,28 @@ export default function Facilities() {
     return (
         <section id="facilities" className="facilities">
             <div className="container">
-                <div className="facilities-header">
-                    <h2 className="section-title">Facilities & Amenities</h2>
-                    <p className="section-subtitle">
-                        Everything you need for a comfortable and memorable stay at DJ Imperial Suites.
-                    </p>
-                </div>
+                <FadeIn delay={100} direction="up">
+                    <div className="facilities-header">
+                        <h2 className="section-title">Facilities & Amenities</h2>
+                        <p className="section-subtitle">
+                            Everything you need for a comfortable and memorable stay at DJ Imperial Suites.
+                        </p>
+                    </div>
+                </FadeIn>
 
                 <div className="facilities-layout">
                     {facilities.map((item, i) => (
-                        <div key={i} className="facility-item">
-                            <div className="facility-icon-wrap">
-                                <span className="facility-icon">{item.icon}</span>
+                        <FadeIn key={i} delay={(i % 4) * 100} direction="up">
+                            <div className="facility-item">
+                                <div className="facility-icon-wrap">
+                                    <span className="facility-icon">{item.icon}</span>
+                                </div>
+                                <div className="facility-content">
+                                    <h4 className="facility-title">{item.title}</h4>
+                                    <p className="facility-desc">{item.desc}</p>
+                                </div>
                             </div>
-                            <div className="facility-content">
-                                <h4 className="facility-title">{item.title}</h4>
-                                <p className="facility-desc">{item.desc}</p>
-                            </div>
-                        </div>
+                        </FadeIn>
                     ))}
                 </div>
             </div>

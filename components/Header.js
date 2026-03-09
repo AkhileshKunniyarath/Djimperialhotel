@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Image from 'next/image';
 import './Header.css';
 
 export default function Header() {
@@ -28,24 +28,31 @@ export default function Header() {
     return (
         <header className={`header ${scrolled ? 'glass' : ''}`}>
             <div className="container header-container">
-                <Link href="#home" className="logo">
-                    {/* Text-based logo for now, can be replaced with the image logo */}
-                    <span className="logo-main">DJ IMPERIAL</span>
-                    <span className="logo-sub">SUITES</span>
-                </Link>
+                <a href="#home" className="logo">
+                    <Image src="/images/logo-shield.jpg" alt="DJ Imperial Suites Logo" width={40} height={40} className="logo-img" />
+                    <div className="logo-text">
+                        <span className="logo-main">DJ IMPERIAL</span>
+                        <span className="logo-sub">SUITES</span>
+                    </div>
+                </a>
+                <div className={`nav-overlay ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(false)}></div>
                 <nav className={`nav ${menuOpen ? 'open' : ''}`}>
+                    <button className="menu-close" onClick={() => setMenuOpen(false)} aria-label="Close Menu">✕</button>
                     <ul className="nav-list">
                         {navLinks.map((link) => (
                             <li key={link.name} className="nav-item">
-                                <Link href={link.href} className="nav-link" onClick={() => setMenuOpen(false)}>
+                                <a href={link.href} className="nav-link" onClick={() => setMenuOpen(false)}>
                                     {link.name}
-                                </Link>
+                                </a>
                             </li>
                         ))}
+                        <li className="nav-item mobile-only-book">
+                            <a href="#book" className="btn btn-book-mobile" onClick={() => setMenuOpen(false)}>Book Now</a>
+                        </li>
                     </ul>
                 </nav>
                 <div className="header-actions">
-                    <Link href="#contact" className="btn btn-book">Book Now</Link>
+                    <a href="#book" className="btn btn-book desktop-only-book" onClick={() => setMenuOpen(false)}>Book Now</a>
                     <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
                         ☰
                     </button>

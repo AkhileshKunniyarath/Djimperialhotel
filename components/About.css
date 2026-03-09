@@ -1,11 +1,12 @@
 .about {
     background-color: var(--surface);
+    overflow: hidden;
 }
 
 .about-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 5rem;
     align-items: center;
 }
 
@@ -14,70 +15,138 @@
     margin-bottom: 2rem;
 }
 
+.about-text-wrap {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.about-text-wrap::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary), transparent);
+    border-radius: 2px;
+}
+
 .about-text p {
     font-size: 1.1rem;
     color: var(--text-muted);
     margin-bottom: 1.5rem;
+    line-height: 1.8;
 }
 
 .about-stats {
     display: flex;
-    gap: 3rem;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
+    gap: 3.5rem;
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.stat-item h3 {
+.stat-item {
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-num {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    color: var(--secondary);
+    margin-bottom: 0.2rem;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1;
 }
 
-.stat-item span {
-    font-weight: 500;
+.stat-num span {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-left: 2px;
+}
+
+.stat-label {
+    font-weight: 600;
     text-transform: uppercase;
     font-size: 0.85rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     color: var(--text-muted);
 }
 
+/* Staggered Image Layout */
 .about-image-wrapper {
     position: relative;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.about-image-wrapper::before {
-    content: '';
+.about-img-main {
     position: absolute;
-    top: -20px;
-    left: -20px;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--primary);
-    z-index: 0;
-    border-radius: 8px;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 500px;
+    background: url('/images/about.jpg') center/cover no-repeat;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    z-index: 1;
 }
 
-.about-image {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    background: url('/images/about.jpg') center/cover no-repeat;
-    background-color: #eee;
-    border-radius: 8px;
-    z-index: 1;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.about-img-sub {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 55%;
+    height: 350px;
+    background: url('/images/gallery-exterior-day.jpg') center/cover no-repeat;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    border: 8px solid var(--surface);
+    z-index: 2;
+}
+
+/* Floating Animation */
+.float-anim {
+    animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 992px) {
     .about-container {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 4rem;
     }
 
     .about-content .section-title {
         text-align: center;
+    }
+
+    .about-text-wrap::before {
+        display: none;
+    }
+
+    .about-text-wrap {
+        padding-left: 0;
     }
 
     .about-text {
@@ -89,7 +158,48 @@
         flex-wrap: wrap;
     }
 
-    .about-image {
+    .about-img-main {
+        width: 90%;
+        right: 5%;
         height: 400px;
+    }
+
+    .about-img-sub {
+        width: 65%;
+        left: 5%;
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-text p {
+        font-size: 0.95rem;
+    }
+
+    .about-stats {
+        flex-wrap: nowrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .stat-num {
+        font-size: 1.5rem;
+        justify-content: center;
+    }
+
+    .stat-num span {
+        font-size: 1rem;
+    }
+
+    .stat-label {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
     }
 }

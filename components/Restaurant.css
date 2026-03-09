@@ -101,3 +101,36 @@
     background: #fff;
     color: var(--secondary);
 }
+
+@media (max-width: 768px) {
+    .restaurant-title {
+        font-size: 2rem;
+    }
+
+    .restaurant-text {
+        font-size: 0.95rem;
+    }
+
+    .cuisine-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .cuisine-card {
+        padding: 1.2rem 0.8rem;
+    }
+
+    .cuisine-icon {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .cuisine-card h4 {
+        font-size: 0.95rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .cuisine-card p {
+        font-size: 0.8rem;
+    }
+}
