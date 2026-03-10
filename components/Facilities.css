@@ -29,6 +29,10 @@
     z-index: 1;
 }
 
+.facilities-layout>div {
+    height: 100%;
+}
+
 .facility-item {
     display: flex;
     align-items: flex-start;
@@ -41,6 +45,7 @@
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .facility-item::after {

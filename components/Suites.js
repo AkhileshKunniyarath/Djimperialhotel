@@ -6,21 +6,21 @@ const suitesData = [
         id: 1,
         name: 'Deluxe Suite',
         description: 'Spacious modern room with premium bedding and smart TV. Designed for the perfect balance of relaxation and productivity.',
-        image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070&auto=format&fit=crop', // Luxury bedroom
+        image: '/images/deluxe-suite-new.jpg', // Luxury bedroom
         features: ['Premium Bedding', 'Smart TV', 'Free WiFi', 'Complimentary Breakfast'],
     },
     {
         id: 2,
         name: 'Executive Suite',
         description: 'Perfect for business travelers with dedicated workspace and panoramic city views. Unwind in refined luxury after a long day of meetings.',
-        image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop', // Business suite
+        image: '/images/executive-suite.png', // Business suite
         features: ['Work Desk', 'City View', 'Mini Bar', 'High-Speed WiFi'],
     },
     {
         id: 3,
         name: 'Family Suite',
         description: 'Extra spacious, interconnected suite designed for comfortable family stays without compromising on five-star elegance and convenience.',
-        image: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=1974&auto=format&fit=crop', // Spacious suite
+        image: '/images/family-suite.jpg', // Spacious suite
         features: ['Twin Beds Available', 'Living Area', 'Kid-friendly', 'Room Service'],
     }
 ];

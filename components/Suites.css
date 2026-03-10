@@ -131,7 +131,6 @@
     .suite-editorial.image-right .suite-img-container,
     .suite-editorial.image-right .suite-content {
         order: unset;
-        padding: 2rem;
     }
 
     .suite-img-container {

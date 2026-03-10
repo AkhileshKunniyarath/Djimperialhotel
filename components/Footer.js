@@ -42,7 +42,16 @@ export default function Footer() {
                     <h4>Get in Touch</h4>
                     <div className="contact-item-footer">
                         <span>📍</span>
-                        <p>Sankar Rd, Sasthamangalam<br />Thiruvananthapuram, Kerala 695010</p>
+                        <a
+                            href="https://maps.google.com/maps?q=DJ+Imperial+Suites,+Sankar+Rd,+Sasthamangalam,+Thiruvananthapuram,+Kerala+695010"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.3s ease' }}
+                            onMouseOver={(e) => e.target.style.color = 'var(--primary)'}
+                            onMouseOut={(e) => e.target.style.color = 'inherit'}
+                        >
+                            DJ Imperial Suites, Sankar Rd, Sasthamangalam<br />Thiruvananthapuram, Kerala 695010
+                        </a>
                     </div>
                     <div className="contact-item-footer">
                         <span>📞</span>

@@ -93,7 +93,7 @@
     right: 0;
     width: 80%;
     height: 500px;
-    background: url('/images/about.jpg') center/cover no-repeat;
+    background: url('/images/exterior-night.jpg') center/cover no-repeat;
     border-radius: 12px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     z-index: 1;
@@ -105,7 +105,7 @@
     left: 0;
     width: 55%;
     height: 350px;
-    background: url('/images/gallery-exterior-day.jpg') center/cover no-repeat;
+    background: url('/images/about-pool-replacement.jpg') center/cover no-repeat;
     border-radius: 12px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
     border: 8px solid var(--surface);

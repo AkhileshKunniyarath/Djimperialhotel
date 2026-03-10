@@ -10,7 +10,6 @@ export default function Hero() {
             <div className="container hero-content">
                 <FadeIn delay={0} direction="up">
                     <h1 className="hero-title shimmer-text">
-                        DJ Imperial Suites
                     </h1>
                 </FadeIn>
                 <FadeIn delay={100} direction="up">

@@ -6,8 +6,9 @@ const galleryImages = [
     { src: '/images/gallery-bedroom-warm.jpg', alt: 'Luxury Suite Bedroom' },
     { src: '/images/gallery-bedroom-tv.jpg', alt: 'Suite with TV Setup' },
     { src: '/images/gallery-bathroom-new.jpg', alt: 'Modern Luxury Bathroom' },
-    { src: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', alt: 'Deluxe suite bedroom' },
-    { src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', alt: 'Food Book Restaurant exterior', span: 'large' },
+    { src: '/images/gallery-new-bedroom.png', alt: 'Deluxe suite bedroom' },
+    { src: '/images/gallery-new-restaurant.jpg', alt: 'Food Book Restaurant interior', span: 'large' },
+    { src: '/images/gallery-new-bedroom-alt.jpg', alt: 'Suite Interior' },
 ];
 
 

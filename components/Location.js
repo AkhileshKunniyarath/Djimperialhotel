@@ -15,7 +15,14 @@ export default function Location() {
                             <div className="address-icon">📍</div>
                             <div>
                                 <h4>Address</h4>
-                                <p>Sankar Rd, Sasthamangalam<br />Thiruvananthapuram<br />Kerala 695010</p>
+                                <a
+                                    href="https://maps.google.com/maps?q=DJ+Imperial+Suites,+Sankar+Rd,+Sasthamangalam,+Thiruvananthapuram,+Kerala+695010"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ display: 'block', marginTop: '0.4rem' }}
+                                >
+                                    DJ Imperial Suites, Sankar Rd, Sasthamangalam<br />Thiruvananthapuram, Kerala 695010
+                                </a>
                             </div>
                         </div>
                         <div className="address-block">
@@ -46,7 +53,7 @@ export default function Location() {
 
                     <div className="map-wrapper">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.4012338088767!2d76.95124117374754!3d8.509804691540682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05be90da07cf85%3A0x54e6e0a5f35ce3d5!2sSasthamangalam%2C%20Thiruvananthapuram%2C%20Kerala!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+                            src="https://maps.google.com/maps?q=DJ%20Imperial%20Suites,%20Sankar%20Rd,%20Sasthamangalam,%20Thiruvananthapuram,%20Kerala%20695010&t=&z=16&ie=UTF8&iwloc=&output=embed"
                             width="100%"
                             height="450"
                             style={{ border: 0 }}

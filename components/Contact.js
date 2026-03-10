@@ -49,7 +49,14 @@ ${message}`;
                             <span className="contact-icon">📍</span>
                             <div>
                                 <strong>Address</strong>
-                                <span>Sankar Rd, Sasthamangalam<br />Thiruvananthapuram, Kerala 695010</span>
+                                <a
+                                    href="https://maps.google.com/maps?q=DJ+Imperial+Suites,+Sankar+Rd,+Sasthamangalam,+Thiruvananthapuram,+Kerala+695010"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ color: 'inherit', textDecoration: 'none' }}
+                                >
+                                    DJ Imperial Suites, Sankar Rd, Sasthamangalam<br />Thiruvananthapuram, Kerala 695010
+                                </a>
                             </div>
                         </div>
                     </div>
